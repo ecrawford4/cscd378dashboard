@@ -1,0 +1,16 @@
+.grid {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%; /* Adjust the value as needed */
+    margin-bottom: 5%; /* Adjust the value as needed */
+    grid-gap: 5%; /* Adjust the value as needed */
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5%; /* Adjust the value as needed */
+    height: 150%; /* Adjust the value as needed */
+    width: 100%; /* Adjust the value as needed */
+}
