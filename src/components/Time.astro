@@ -3,6 +3,7 @@
 ---
 
 <script>
+
 /************
 Dynamic Data
 ************/
@@ -32,7 +33,7 @@ const theClockApp = () => {
   // Get 12 hour format
   gotHours = gotHours % 12 || 12;
   // Optionally, append zero to single digit hours
-  gotHours = gotHours < 10 ? `0${gotHours}` : gotHours;   
+  gotHours = gotHours < 10 ? `0${gotHours}` : gotHours   
   // Optionally, append zero to single digit minutes
   gotMinutes = gotMinutes < 10 ? `0${gotMinutes}` : gotMinutes;
   // Optionally, append zero to single digit seconds
@@ -71,11 +72,11 @@ const theClockApp = () => {
   setInterval(theClockApp, 1000);
 </script>
 
-<section class="time card glass">
-    <h1>Current Time:</h1>
-    <time>
-      <data class="hours">HH</data> : <data class="minutes">MM</data> :
-      <data class="seconds">SS</data>
-      <data class="amOrPM">AM/PM</data>
-    </time>
-<section>
+<h1>current time:</h1>
+<time>
+  <p>
+    <data class="hours">HH</data> : <data class="minutes">MM</data> :
+    <data class="seconds">SS</data>
+    <data class="amOrPM">AM/PM</data>
+  </p>
+</time>

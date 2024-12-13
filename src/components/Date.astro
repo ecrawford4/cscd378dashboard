@@ -67,21 +67,19 @@ const dayOfWeek = document.querySelector('.dayOfWeek');
 Set DOM Elements
 ************/
 // Set the month
-month.textContent = allTheMonths[gotMonth];
+month.textContent = allTheMonths[gotMonth].toLowerCase();
 // Set day of the month
-dayOfMonth.textContent = gotDayOfMonth;
+dayOfMonth.textContent = gotDayOfMonth.toString();
 // Set the year
-year.textContent = gotYear;
+year.textContent = gotYear.toString();
 // Set the day of the week
-dayOfWeek.textContent = allTheDays[gotDayOfWeek];
+dayOfWeek.textContent = allTheDays[gotDayOfWeek].toLowerCase();
 </script>
 
 <!-- HTML -->
-<section class="date card glass">
-    <h1>Date:</h1>
-    <time>
-      <data class="dayOfWeek">SMTWTFS</data>
-      <data class="month">Month</data>
-      <data class="dayOfMonth">00</data>, <data class="year">0000</data>
-    </time>
-  </section>
+<h1>date:</h1>
+<p>
+  <data class="dayOfWeek">SMTWTFS</data>
+  <data class="month">Month</data>
+  <data class="dayOfMonth">00</data>, <data class="year">0000</data>
+</p>

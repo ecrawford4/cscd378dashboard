@@ -9,8 +9,18 @@
 .card {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: left;
+
+    padding: 5%; /* Adjust the value as needed */
     border-radius: 5%; /* Adjust the value as needed */
-    height: 150%; /* Adjust the value as needed */
+    height: 100%; /* Adjust the value as needed */
     width: 100%; /* Adjust the value as needed */
+}
+
+h1 {
+    font-size: 2em; /* Adjust the value as needed */
+}
+
+p {
+    text-align-last: right;
 }

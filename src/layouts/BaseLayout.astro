@@ -8,13 +8,16 @@
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<link rel="stylesheet" href="../styles/MyStyles.css" />
-		<title>Ethan's Dashboard</title>
+		<title>MagicMirror</title>
 	</head>
 	<body>
 	
-    <main class="grid grid-cols-3">
-        <slot />
-	</main>        
+	<main class="flex justify-center items-center">
+		<div class="grid grid-cols-2 gap-4">
+			<!-- Your centered content here -->
+			<slot />
+		</div>
+	</main>
 
 	</body>
 </html>
