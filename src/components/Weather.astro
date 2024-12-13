@@ -18,6 +18,9 @@ const url = `${queryEndpoint}?q=${queryCity}&appid=${APIKEY}&units=${queryUnits}
 // Get DOM Elements
 const city = document.querySelector('.city');
 const temp = document.querySelector('.temp');
+const humidity = document.querySelector('.humidity');
+const wind = document.querySelector('.wind');
+const windDirection = document.querySelector('.wind-direction');
 const icon = document.querySelector('.icon');
 
 // Using fetch to get data
@@ -34,6 +37,9 @@ fetch(url)
     // Set DOM Elements
     city.textContent = data.name; 
     temp.textContent = data.main.temp;
+    humidity.textContent = data.main.humidity;
+    // wind.textContent = data.wind.speed;
+    // windDirection.textContent = data.wind.deg;
 
     icon.setAttribute('src', `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`)
   
@@ -44,9 +50,12 @@ fetch(url)
 <!-- Weather -->
 <section class="weather card glass">
 
-      <h1>Weather:</h1>
-      <data class="city">City</data>
-      <data class="temp">Temp</data>
+      <h1>weather:</h1>
+      <p>city: <data class="city">City</data></p>
+      <p>temp: <data class="temp">Temp</data></p>
+      <p>humidity: <data class="humidity">Humidity</data>/100</p>
+      <!-- <p>wind: <data class="wind">Wind</data> mph
+      <data class="wind-direction">Direction</data> degrees</p> -->
       <img class="icon" 
       src="https://via.placeholder.com/150" alt="Placeholder" width="100em">
       
