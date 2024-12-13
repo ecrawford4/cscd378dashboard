@@ -4,6 +4,33 @@
 
 <script>
 
+const allTheTimeZones = [
+  "GMT", // 0 GMT
+  "CET", // +1 GMT
+  "EET",  // +2 GMT
+  "MSK", // +3 GMT
+  "SAMT", // +4 GMT
+  "YEKT", // +5 GMT
+  "OMST",   // +6 GMT
+  "KRAT", // +7 GMT
+  "CST", // +8 GMT
+  "JST", // +9 GMT
+  "VLAT", // +10 GMT
+  "MAGT", // +11 GMT
+  "PETT", // +12 GMT -12 GMT
+  "SST", // +13 GMT -11 GMT
+  "HST", // +14 GMT -10 GMT
+  "AKST", // -9 GMT
+  "PST", // -8 GMT
+  "MST",  // -7 GMT
+  "CST", // -6 GMT
+  "EST", // -5 GMT
+  "AST", // -4 GMT
+  "HST", // placeholder -3 GMT
+  "WGT", // -2 GMT
+  "WET" // placeholder -1 GMT
+]
+
 /************
 Dynamic Data
 ************/
@@ -21,10 +48,13 @@ const theClockApp = () => {
   let gotMinutes = timeNow.getMinutes();
   // Get current seconds
   let gotSeconds = timeNow.getSeconds();
+  // Get current time zone
+  let gotTimeZone = timeNow.getTimezoneOffset();
   
   // Check-Check: Is the data correct? 
   // console.log(gotHours, gotMinutes, gotSeconds);
-  
+  console.log(gotTimeZone);
+
   /************
   Format Data
   ************/
@@ -38,6 +68,8 @@ const theClockApp = () => {
   gotMinutes = gotMinutes < 10 ? `0${gotMinutes}` : gotMinutes;
   // Optionally, append zero to single digit seconds
   gotSeconds = gotSeconds < 10 ? `0${gotSeconds}` : gotSeconds;
+  // Optionally, convert time zone to string
+  const strTimeZone = gotTimeZone < 0 ? allTheTimeZones[gotTimeZone / 60] : allTheTimeZones[(gotTimeZone / 60) * 2];
   
   /************
   Get DOM Elements
@@ -50,6 +82,8 @@ const theClockApp = () => {
   const seconds = document.querySelector(".seconds");
   // Get AM or PM
   const amOrPM = document.querySelector('.amOrPM');
+  // Time Zone
+  const timeZone = document.querySelector('.timeZone');
   
   /************
   Set DOM Elements
@@ -62,6 +96,8 @@ const theClockApp = () => {
   seconds.textContent = gotSeconds;
   // Set AM or PM
   amOrPM.textContent = gotAmOrPM;
+  // Set Time Zone
+  timeZone.textContent = strTimeZone;
     
   }
   
@@ -75,8 +111,7 @@ const theClockApp = () => {
 <h1>current time:</h1>
 <time>
   <p>
-    <data class="hours">HH</data> : <data class="minutes">MM</data> :
-    <data class="seconds">SS</data>
-    <data class="amOrPM">AM/PM</data>
+    <data class="hours">HH</data>:<data class="minutes">MM</data>:<data class="seconds">SS</data>
+    <data class="amOrPM">AM/PM</data> <data class="timeZone">N/A</data>
   </p>
 </time>
